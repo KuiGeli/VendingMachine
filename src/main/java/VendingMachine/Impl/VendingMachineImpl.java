@@ -102,6 +102,7 @@ public class VendingMachineImpl implements IVendingMachine {
         if(i > 0){
            System.out.println(i + "x: 0.10 RON");
            i = 0;
+            userMoney = Math.round(userMoney * 100)/100.00;
        }
         while (userMoney >= FIVE.getValue()){
             userMoney -= FIVE.getValue();
@@ -112,6 +113,7 @@ public class VendingMachineImpl implements IVendingMachine {
         if(i > 0){
             System.out.println(i + "x: 0.05 RON");
             i = 0;
+            userMoney = Math.round(userMoney * 100)/100.00;
         }
         while (userMoney >= ONE.getValue()){
             userMoney -= ONE.getValue();
@@ -122,6 +124,7 @@ public class VendingMachineImpl implements IVendingMachine {
         if(i > 0){
             System.out.println(i + "x: 0.01 RON");
             i = 0;
+            userMoney = Math.round(userMoney * 100)/100.00;
         }
 
     }
