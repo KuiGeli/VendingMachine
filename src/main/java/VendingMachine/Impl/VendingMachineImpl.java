@@ -6,6 +6,7 @@ import VendingMachine.Item.Item;
 import VendingMachine.Storage.CoinStorage;
 import VendingMachine.Storage.Storage;
 
+import java.text.DecimalFormat;
 import java.util.Queue;
 
 import static VendingMachine.Coin.Coin.*;
@@ -13,6 +14,10 @@ import static VendingMachine.Coin.Coin.*;
 public class VendingMachineImpl implements IVendingMachine {
 
 
+    private String pattern = ".##";
+
+
+    DecimalFormat decimalFormat = new DecimalFormat(pattern);
 
     CoinStorage coinStorage = new CoinStorage();
     Storage storage = new Storage();
@@ -20,6 +25,8 @@ public class VendingMachineImpl implements IVendingMachine {
 
 
     public VendingMachineImpl() {
+
+
         storage.newItem("Coca-cola", 2.5, 10);
         storage.newItem("Pepsi", 3.0, 10);
         storage.newItem("Fanta", 2.5, 10);
@@ -71,40 +78,47 @@ public class VendingMachineImpl implements IVendingMachine {
     @Override
     public void getChange() {
 
+        decimalFormat.format(userMoney);
+
         System.out.println("Your change is:");
         int i = 0;
-        while (userMoney > FIFTY.getValue()){
-            userMoney =- FIFTY.getValue();
+        while (userMoney >= FIFTY.getValue()){
+            userMoney -= FIFTY.getValue();
             coinStorage.removeCoins(FIFTY);
             i++;
+
         }
-       if(i > 0){
-           System.out.println(i + "x: 0.50 RON");
-           i = 0;
-       }
-        while (userMoney > TEN.getValue()){
-            userMoney =- TEN.getValue();
+        if(i > 0){
+            System.out.println(i + "x: 0.50 RON");
+            i = 0;
+            userMoney = Math.round(userMoney * 100)/100.00;
+        }
+        while (userMoney >= TEN.getValue()){
+            userMoney -= TEN.getValue();
             coinStorage.removeCoins(TEN);
             i++;
         }
-       if(i > 0){
+
+        if(i > 0){
            System.out.println(i + "x: 0.10 RON");
            i = 0;
        }
-        while (userMoney > FIVE.getValue()){
-            userMoney =- FIVE.getValue();
+        while (userMoney >= FIVE.getValue()){
+            userMoney -= FIVE.getValue();
             coinStorage.removeCoins(FIVE);
             i++;
         }
+
         if(i > 0){
             System.out.println(i + "x: 0.05 RON");
             i = 0;
         }
-        while (userMoney > ONE.getValue()){
-            userMoney =- ONE.getValue();
+        while (userMoney >= ONE.getValue()){
+            userMoney -= ONE.getValue();
             coinStorage.removeCoins(ONE);
             i++;
         }
+
         if(i > 0){
             System.out.println(i + "x: 0.01 RON");
             i = 0;

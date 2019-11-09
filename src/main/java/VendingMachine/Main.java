@@ -4,9 +4,7 @@ import VendingMachine.Exceptions.NotValidCoinException;
 import VendingMachine.Exceptions.SoldOutException;
 import VendingMachine.Impl.VendingMachineImpl;
 import VendingMachine.Item.Item;
-import VendingMachine.Storage.Storage;
 
-import java.util.InputMismatchException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;

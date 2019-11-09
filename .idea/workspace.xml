@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="afcaf078-c9ad-4171-8207-b4826a9b8dd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VendingMachine/Impl/VendingMachineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VendingMachine/Impl/VendingMachineImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VendingMachine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VendingMachine/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VendingMachine/Impl/VendingMachineImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VendingMachine/Impl/VendingMachineImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VendingMachine/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VendingMachine/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VendingMachine/Storage/Storage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/VendingMachine/Storage/Storage.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,5 +99,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="userMoney" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
