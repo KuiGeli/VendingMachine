@@ -64,7 +64,7 @@ public class Main {
 
                     int itemNumber = userInput.nextInt();
 
-                    while (itemNumber < 0 || itemNumber > vendingMachine.getStorage().getItems().size() - 1) {
+                    while (itemNumber < 0 || itemNumber > vendingMachine.getStorage().getItems().size()) {
                         Utils.userNumberError();
                         Utils.itemList(vendingMachine.getStorage());
                         itemNumber = userInput.nextInt();
